@@ -1,7 +1,7 @@
 # aws-serverless-screenshot
 ## Website screenshot API with AWS, Puppeteer, and Serverless Framework
 
-Simple screenshot utility using Puppeteer on AWS Lambda, API Gateway with Serverless Framework.
+Take screenshots of webpages using Puppeteer on AWS Lambda, with API Gateway and Serverless Framework.
 
 ## Steps
 
@@ -26,7 +26,7 @@ layers:
   ```
 5. Edit `takeScreenshot.js` if you need it.
 6. Run `serverless deploy` to deploy the project on AWS. Copy the API endpoint.
-7. After that, you can run `serverless deploy function --function takeScreenshot` wherever you update `takeScreenshot.js`.
+7. After that, you can run `serverless deploy function --function takeScreenshot` whenever you update `takeScreenshot.js`.
 8. API endpoint requires the following parameters (using a POST request):
  - url: the website URL.
  - width: desired width.
