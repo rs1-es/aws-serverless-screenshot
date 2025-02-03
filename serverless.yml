@@ -1,0 +1,21 @@
+service: page-screenshot
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-1
+  tags:
+    project: myproject
+
+functions:
+  takeScreenshot:
+    handler: takeScreenshot.handler
+    timeout: 29
+    memorySize: 4096
+    layers:
+      - arn:aws:lambda:eu-west-1:764866452798:layer:chrome-aws-lambda:50
+    events:
+      - httpApi:
+          path: /screenshot
+          method: post
